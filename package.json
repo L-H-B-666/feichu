@@ -8,6 +8,10 @@
     "postinstall": "nuxt prepare"
   },
   "devDependencies": {
-    "nuxt": "^3.0.0"
+    "nuxt": "^3.4.2"
+  },
+  "dependencies": {
+    "@types/koa": "^2.13.6",
+    "koa": "^2.14.2"
   }
 }
