@@ -1,15 +1,15 @@
-import { resSend, errThrow, judegParams, jwtToken } from '../util'
 import type { QueryObject } from 'ufo'
+import { resSend, errThrow, judegParams, jwtToken } from '../util'
 export default defineEventHandler(async (event) => {
     try {
         const method = getMethod(event).toUpperCase()
-        // const query: QueryObject = getQuery(event)//query参数 
-        // const { account, password } = query
-        if (method !== 'POST') {
-            throw errThrow.errorRequest()
-        }
-        const body = await readBody(event)//body参数
-        const { account, password }: { [key: string]: string } = body
+        const query: QueryObject = getQuery(event)//query参数 
+        const { account, password } = query
+        // if (method !== 'POST') {
+        //     throw errThrow.errorRequest()
+        // }
+        // const body = await readBody(event)//body参数
+        // const { account, password }: { [key: string]: string } = body
         await judegParams({ account, password })
         let data
         if (account === '123456' && password === 'aa123') {

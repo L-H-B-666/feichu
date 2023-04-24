@@ -1,4 +1,4 @@
-import { resSend, errThrow, judegParams, jwtToken } from '../util'
+import { resSend, judegParams } from '../util'
 import { robotSendMsg } from '../util/robot'
 export default defineEventHandler(async (event) => {
     try {

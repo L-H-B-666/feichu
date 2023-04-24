@@ -19,11 +19,11 @@ export const errThrow = {
 }
 
 /**返回参数统一的结构类型  */
-export interface resType {
+export interface resType<T> {
     code: number
     success: boolean
     message: string
-    data?: any
+    data?: T
 }
 /**返回res通用格式 */
 export const resSend = {
@@ -34,13 +34,13 @@ export const resSend = {
      * @param data 如果成功，数据放在这
      * @returns 
      */
-    send(code: number, success: boolean, message: string, data?: any): resType {
+    send<T>(code: number, success: boolean, message: string, data?: T): resType<T> {
         let res = { code, success, message, data }
         if (!data) delete res.data
         return res
     },
     /**成功情况 */
-    success(data: any) {
+    success<T>(data: T): resType<T> {
         return this.send(200, true, '操作成功', data)
     },
     /**失败情况 */

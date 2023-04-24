@@ -5,8 +5,8 @@
   </div>
 </template>
 
-<script setup>
-const b = useState("x", "666");
+<script setup lang="ts">
+const b = useState("x", () => "666");
 const a = 666;
 </script>
 
