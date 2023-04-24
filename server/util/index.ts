@@ -1,11 +1,6 @@
 
 import jwt from 'jsonwebtoken'
-
-/**抛出错误通用格式类型 */
-export interface errThrowType {
-    code: number
-    message: string
-}
+import { resType, errThrowType } from './index.d'
 /**抛出错误通用格式 */
 export const errThrow = {
     /**请求方法不对时 */
@@ -16,14 +11,6 @@ export const errThrow = {
     errorData(message: string = '操作失败'): errThrowType {
         return { code: 400, message }
     },
-}
-
-/**返回参数统一的结构类型  */
-export interface resType<T> {
-    code: number
-    success: boolean
-    message: string
-    data?: T
 }
 /**返回res通用格式 */
 export const resSend = {
@@ -44,7 +31,7 @@ export const resSend = {
         return this.send(200, true, '操作成功', data)
     },
     /**失败情况 */
-    error(code: number, message: string) {
+    error(code: number, message: string): resType<void> {
         return this.send(code, false, message)
     },
 }

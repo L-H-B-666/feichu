@@ -1,4 +1,5 @@
 import axios from 'axios'//这个页面不能用useFetch，只能用第三方请求库实现了
+import { robotRes } from './index.d'
 /**本页面的变量配置 */
 const config = {
     /** accessToken 最大有效期两小时*/
@@ -29,29 +30,6 @@ const getAccessToken = (): Promise<void> => {
             reject(error.message || error)
         }
     })
-}
-/**机器人的返回参数接口 */
-interface robotRes {
-    "code": number,
-    "data": {
-        "body": {
-            "content": string
-        },
-        "chat_id": string,
-        "create_time": string,
-        "deleted": boolean,
-        "message_id": string,
-        "msg_type": string,
-        "sender": {
-            "id": string,
-            "id_type": string,
-            "sender_type": string,
-            "tenant_key": string
-        },
-        "update_time": string,
-        "updated": boolean
-    },
-    "msg": string
 }
 
 /** 发送消息 */

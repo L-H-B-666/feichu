@@ -1,9 +1,8 @@
-import type { QueryObject } from 'ufo'
 import { resSend, errThrow, judegParams, jwtToken } from '../util'
 export default defineEventHandler(async (event) => {
     try {
         const method = getMethod(event).toUpperCase()
-        const query: QueryObject = getQuery(event)//query参数 
+        const query = getQuery(event)//query参数 
         const { account, password } = query
         // if (method !== 'POST') {
         //     throw errThrow.errorRequest()
