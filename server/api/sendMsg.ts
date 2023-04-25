@@ -24,8 +24,7 @@ export default defineEventHandler(async (event) => {
                 throw errThrow.errorData('type类型不存在')
                 return;
         }
-        let data = { ...res }
-        return resSend.success(data)
+        return resSend.success(res)
     } catch (error: any) {
         console.log('出现错误', error);
         return resSend.error(error?.code || 500, error?.message || '系统错误')

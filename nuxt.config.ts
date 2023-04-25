@@ -1,4 +1,5 @@
 module.exports = {
+  ssr: false,
   nitro: {
     preset: 'vercel-edge',
   },
