@@ -2,7 +2,7 @@
   <div>{{ c }}</div>
 </template>
 
-<script setup>
+<script setup lang="ts">
 const c = 3;
 </script>
 
