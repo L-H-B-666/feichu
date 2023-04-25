@@ -17,7 +17,7 @@ const config = {
         minTime: 300 * 1000
     },
     /**群聊id */
-    chatId: 'oc_973fe47376f550f352f9280621f49e0d',//测试群 oc_973fe47376f550f352f9280621f49e0d ，考核群为 oc_3d1ba27d507fdcf11dbe9ad80ee648b9
+    chatId: 'oc_3d1ba27d507fdcf11dbe9ad80ee648b9',//测试群 oc_973fe47376f550f352f9280621f49e0d ，考核群为 oc_3d1ba27d507fdcf11dbe9ad80ee648b9
 }
 /** 如果即将过期了，就自动获取 AccessToken */
 const getAccessToken = (): Promise<void> => {
